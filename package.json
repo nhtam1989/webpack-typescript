@@ -15,11 +15,14 @@
   "license": "ISC",
   "dependencies": {
     "@apollo/client": "^3.4.16",
+    "apollo-boost": "^0.4.9",
+    "apollo-link-http": "^1.5.17",
     "apollo-server-express": "^3.4.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "graphql": "^15.6.1",
+    "graphql-tag": "^2.12.5",
     "helmet": "^4.6.0"
   },
   "devDependencies": {

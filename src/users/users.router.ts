@@ -6,6 +6,63 @@ import express, { Request, Response } from "express";
 import * as UserService from "./users.service";
 import { User, ItemEmpty } from "./user.interface";
 import { Users } from "./users.interface";
+import ApolloClient, { gql, InMemoryCache } from "apollo-boost";
+import { HttpLink } from 'apollo-link-http';
+import { createHttpLink } from 'apollo-link-http';
+// import fetch from 'node-fetch';
+// import { ApolloClient, HttpLink, ApolloLink, InMemoryCache, concat } from '@apollo/client';
+
+// const httpLink = new HttpLink({
+//     uri: 'https://prompt-platypus-67.hasura.app/v1/graphql',
+//     headers: {
+//         'x-hasura-admin-secret': 'TjU2UqF1lic9oPPFTYlQ6gqqi8POh53yViBRKu0WZVHZD6590ncVNxWa0Cft0txR'
+//     }
+// });
+
+// const apolloClient = new ApolloClient({
+//     link: httpLink,
+//     cache: new InMemoryCache(),
+//     connectToDevTools: true
+// });
+
+// console.log("apolloClient",apolloClient);
+// const authMiddleware = new ApolloLink((operation, forward) => {
+//   // add the authorization to the headers
+//   operation.setContext(({ headers = {} }) => ({
+//     headers: {
+//       ...headers,
+//     //   authorization: localStorage.getItem('token') || null,
+//     }
+//   }));
+
+//   return forward(operation);
+// })
+
+// const client = new ApolloClient({
+//   cache: new InMemoryCache(),
+//   link: concat(authMiddleware, httpLink),
+// });
+
+// import { ApolloClient, InMemoryCache, gql, HttpLink } from '@apollo/client';
+
+
+
+// const apolloClient = new ApolloClient({
+//     link: httpLink,
+//     cache: new InMemoryCache(),
+//     connectToDevTools: true
+// });
+// console.log("apolloClient", apolloClient);
+
+// const GET_USERS = gql`
+//     query getListUser {
+//         db_demo_users {
+//         id
+//         username
+//         fullname
+//         }
+//     }
+// `;
 
 /**
 * Router Definition
@@ -36,7 +93,7 @@ usersRouter.get("/:id", async (req: Request, res: Response) => {
 
     try {
         const item: User = await UserService.find(id);
-        if(item){
+        if (item) {
             res.status(200).send(item);
         } else {
             const message: ItemEmpty = {
