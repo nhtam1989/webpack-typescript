@@ -4,7 +4,6 @@
   "description": "",
   "main": "entrypoint.js",
   "scripts": {
-    "build": "nodemon dist/entrypoint",
     "start": "ts-node src/entrypoint.ts",
     "dev": "nodemon dist/entrypoint",
     "webpack": "webpack --config webpack.config.ts",
