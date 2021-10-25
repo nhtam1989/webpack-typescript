@@ -5,9 +5,13 @@ import * as dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { itemsRouter } from "./items/items.router";
-import { homeRouter } from "./home/home.router";
-import { usersRouter } from "./users/users.router";
+import path from 'path';
+// require('app-module-path').addPath(path.join(__dirname, '../'));
+
+// import router
+import { homeRouter } from "./routers/home/home.router";
+// -----------------------
+import { itemsRouter } from "./routers/items/item.router";
 dotenv.config();
 
 /**
@@ -24,15 +28,14 @@ const app = express();
 /**
 *  App Configuration
 */
+app.set('view engine', 'pug')
+app.set('views', './views');
 
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use("/", homeRouter );
 app.use("/items", itemsRouter);
-app.use("/users", usersRouter);
-
-
 
 /**
  * Server Activation

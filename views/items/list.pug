@@ -1,0 +1,19 @@
+extends index.pug
+
+h1 #{title}
+if data.length > 0
+    ul
+    each val in data
+        li= val.name
+else
+    p Data Empty
+
+//- extends layout.pug
+
+//- block content
+//-   .sidebar
+//-     block sidebar
+//-       p nothing
+//-   .primary
+//-     block primary
+//-       p nothing
