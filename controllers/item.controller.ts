@@ -26,6 +26,11 @@ export const item = async (req: Request, res: Response) => {
         //     });
         // });
 
+        return res.status(200).json({
+            status: '200',
+            module: 'development',
+            message: 'Welcom to Api'
+        })
         const data = await findAll()
         res.status(200).json({
             status: 200,
