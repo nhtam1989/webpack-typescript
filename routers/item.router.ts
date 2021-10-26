@@ -13,4 +13,4 @@ export const itemsRouter = express.Router();
 /**
  * Controller Definitions
  */
- itemsRouter.get("/",middleware, item );
+itemsRouter.get("/", middleware, item);
