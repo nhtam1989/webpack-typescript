@@ -1,7 +1,6 @@
-import * as dotenv from "dotenv";
+// require('dotenv').config();
 import mysql from 'mysql';
-dotenv.config();
-
+console.log("-------111",process.env.NODE_ENV );
 export const connection = mysql.createConnection({
   host: "localhost",
   user: "root",

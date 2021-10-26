@@ -6,14 +6,22 @@ export const middleware = async (req: Request, res: Response, next: any) => {
     if(process.env.NODE_ENV == 'development'){
         next()
     } else {
+        itemProduction(req, res)
+    }
+}
+
+
+export const itemProduction = async (req: Request, res: Response) => {
+    try {
         res.status(200).json({
             status: '201',
-            module: 'Production',
-            message: 'Welcom to Api ----------Production'
+            message: 'Welcom to Api ---------- Item Production'
         })
+    } catch (e) {
+        console.log(e);
     }
-    
 }
+
 
 export const item = async (req: Request, res: Response) => {
     try {
@@ -25,7 +33,7 @@ export const item = async (req: Request, res: Response) => {
         //         data: results
         //     });
         // });
-
+        
         const data = await findAll()
         res.status(200).json({
             status: 200,

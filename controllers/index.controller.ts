@@ -7,8 +7,7 @@ export const middleware = async (req: Request, res: Response, next: any) => {
     } else {
         res.status(200).json({
             status: '201',
-            module: 'Development',
-            message: 'Welcom to Api ----------Development'
+            message: 'Welcom to Api ---------- Index Development'
         })
     }
     
@@ -18,8 +17,7 @@ export const index = async (req: Request, res: Response) => {
     try {
         res.status(200).json({
             status: '200',
-            module: 'Production',
-            message: 'Welcom to Api ----------Production'
+            message: 'Welcom to Api ---------- Index Production'
         })
     } catch (e) {
         console.log(e);

@@ -1,7 +1,7 @@
 /**
  * Required External Modules
  */
-import * as dotenv from "dotenv";
+require('dotenv').config();
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
@@ -12,7 +12,7 @@ import path from 'path';
 import { indexRouter } from "./routers/index.router";
 // -----------------------
 import { itemsRouter } from "./routers/item.router";
-dotenv.config();
+
 
 /**
 * App Variables
