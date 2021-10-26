@@ -3,13 +3,13 @@ import { Request, Response } from "express";
 import { findAll } from "../models/item.model";
 
 export const middleware = async (req: Request, res: Response, next: any) => { 
-    if(process.env.NODE_ENV !== 'development'){
+    if(process.env.NODE_ENV == 'development'){
         next()
     } else {
         res.status(200).json({
             status: '201',
-            module: 'Development',
-            message: 'Welcom to Api ----------Development'
+            module: 'Production',
+            message: 'Welcom to Api ----------Production'
         })
     }
     
