@@ -31,11 +31,11 @@ export const item = async (req: Request, res: Response) => {
             module: 'development',
             message: 'Welcom to Api'
         })
-        const data = await findAll()
-        res.status(200).json({
-            status: 200,
-            data
-        });
+        // const data = await findAll()
+        // res.status(200).json({
+        //     status: 200,
+        //     data
+        // });
     } catch (e) {
         console.log(e);
     }
