@@ -6,9 +6,10 @@ export const connection = mysql.createConnection({
   password: "root",
   database: "laravel-api"
 });
-  
-// connection.connect(function(err) {
-//   if (err) throw err;
-//   console.log('Database is connected successfully !');
-// });
+if(process.env.NODE_ENV == 'development'){
+  connection.connect(function(err) {
+    if (err) throw err;
+    console.log('Database is connected successfully !');
+  });
+}
 

@@ -7,9 +7,9 @@ export const middleware = async (req: Request, res: Response, next: any) => {
         next()
     } else {
         res.status(200).json({
-            status: '200',
-            module: 'development',
-            message: 'Welcom to Api'
+            status: '201',
+            module: 'Development',
+            message: 'Welcom to Api ----------Development'
         })
     }
     
