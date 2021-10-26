@@ -1,10 +1,22 @@
 import { Request, Response } from "express";
-import { connection } from "../../config/connection";
-import { findAll } from "../../models/items/item.model";
+// import { connection } from "../config/connection";
+import { findAll } from "../models/item.model";
+
+export const middleware = async (req: Request, res: Response, next: any) => { 
+    if(process.env.NODE_ENV !== 'development'){
+        next()
+    } else {
+        res.status(200).json({
+            status: '200',
+            module: 'development',
+            message: 'Welcom to Api'
+        })
+    }
+    
+}
 
 export const item = async (req: Request, res: Response) => {
     try {
-
         // const sql = "SELECT * FROM users limit 1";
         // connection.query(sql, async (err, results) => {
         //     if (err) throw err;

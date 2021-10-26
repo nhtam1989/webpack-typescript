@@ -2,7 +2,7 @@
  * Required External Modules and Interfaces
  */
 import express from "express";
-import { item } from "../../controllers/items/item.controller"
+import { item, middleware } from "../controllers/item.controller"
 
 /**
 * Router Definition
@@ -13,4 +13,4 @@ export const itemsRouter = express.Router();
 /**
  * Controller Definitions
  */
- itemsRouter.get("/", item );
+ itemsRouter.get("/",middleware, item );

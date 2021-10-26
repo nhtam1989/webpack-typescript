@@ -10,9 +10,8 @@ import path from 'path';
 
 // import router
 import { indexRouter } from "./routers/index.router";
-import { homeRouter } from "./routers/home/home.router";
 // -----------------------
-import { itemsRouter } from "./routers/items/item.router";
+import { itemsRouter } from "./routers/item.router";
 dotenv.config();
 
 /**
