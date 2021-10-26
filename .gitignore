@@ -6,4 +6,3 @@ dist
 # files
 package-lock.json
 .env
-yarn.lock

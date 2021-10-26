@@ -2,10 +2,10 @@
   "name": "ts-ex",
   "version": "1.0.0",
   "description": "",
-  "main": "entrypoint.js",
+  "main": "app.js",
   "scripts": {
-    "start": "ts-node src/entrypoint.ts",
-    "dev": "nodemon dist/entrypoint",
+    "start": "ts-node app.ts",
+    "dev": "nodemon dist/app",
     "webpack": "webpack --config webpack.config.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,6 +25,7 @@
     "graphql": "^15.6.1",
     "graphql-tag": "^2.12.5",
     "helmet": "^4.6.0",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.14",
     "pug": "^3.0.2",
     "ts-node": "^10.4.0",
@@ -36,6 +37,7 @@
     "@types/cors": "^2.8.12",
     "@types/dotenv": "^8.2.0",
     "@types/helmet": "^4.0.0",
+    "@types/mysql": "^2.15.19",
     "ts-loader": "^9.2.6",
     "webpack-dev-server": "^4.3.1",
     "webpack-node-externals": "^3.0.0"

@@ -6,9 +6,10 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import path from 'path';
-// require('app-module-path').addPath(path.join(__dirname, '../'));
+// require('app-module-path').addPath(path.join(__dirname, './'));
 
 // import router
+import { indexRouter } from "./routers/index.router";
 import { homeRouter } from "./routers/home/home.router";
 // -----------------------
 import { itemsRouter } from "./routers/items/item.router";
@@ -34,7 +35,7 @@ app.set('views', './views');
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-app.use("/", homeRouter );
+app.use("/", indexRouter);
 app.use("/items", itemsRouter);
 
 /**

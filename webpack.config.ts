@@ -3,7 +3,7 @@ const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
-  entry: ["webpack/hot/poll?100", "./src/entrypoint.ts"],
+  entry: ["webpack/hot/poll?100", "./app.ts"],
   watch: true,
   target: "node",
   externals: [
@@ -27,6 +27,6 @@ module.exports = {
   plugins: [new webpack.HotModuleReplacementPlugin()],
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "entrypoint.js"
+    filename: "./app.js"
   }
 };
